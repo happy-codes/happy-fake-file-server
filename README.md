@@ -34,6 +34,10 @@ or
 https://fake-file-server.harryyu.me/download?size=10&speed=1
 ```
 
+Then, you can set the URL as the target for your download logic and start coding and testing.
+
+![](./example/example.gif)
+
 I use `node stream` to implement this tool, it is pretty easy, simple, and efficient, and you can read [the code](./src/index.ts) if you are interested.
 
 ## About Happy Codes
