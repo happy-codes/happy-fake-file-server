@@ -4,8 +4,8 @@
   "description": "A fake file download server which makes you happy.",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
-    "dev": "NODE_ENV=local nodemon --watch 'src/**/*.ts'  --exec 'ts-node' src/index.ts",
+    "start": "PORT=6644 node dist/index.js",
+    "dev": "PORT=6644 NODE_ENV=local nodemon --watch 'src/**/*.ts'  --exec 'ts-node' src/index.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

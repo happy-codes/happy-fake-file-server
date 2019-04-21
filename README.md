@@ -15,7 +15,7 @@ Of course, you can set how large the file is and the download network speed so t
 ```
 npm install
 npm run dev
-open http://localhost:3000/download?size=10&speed=1
+open http://localhost:6644/download?size=10&speed=1
 ```
 
 You will understand how this works.
