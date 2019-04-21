@@ -1,0 +1,56 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: build-api-image
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker-hub-username
+      password:
+        from_secret: docker-hub-password
+      repo: yujiangshui/happy-fake-file-server
+      dockerfile: Dockerfile
+      tags:
+        - ${DRONE_COMMIT}
+        - latest
+    when:
+      ref:
+        include:
+          - refs/tags/*
+  - name: deploy-api
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        from_secret: app-host
+      ssh_key:
+        from_secret: app-host-pem
+      script:
+        - source ~/.zshrc
+        - cd /root/apps/happy-fake-file-server
+        - docker-compose pull
+        - docker-compose stop
+        - docker-compose rm -f
+        - docker-compose up -d
+    when:
+      ref:
+        include:
+          - refs/tags/*
+
+  - name: notify
+    image: appleboy/drone-telegram
+    settings:
+      token:
+        from_secret: telegram-bot-token
+      to:
+        from_secret: telegram-id
+      message: >
+        {{#success build.status}}
+          build {{build.number}} succeeded. Git Tag: {{build.tag}}.
+        {{else}}
+          build {{build.number}} failed. Git Tag: {{build.tag}}. Build Link: {{build.link}}.
+        {{/success}}
+    when:
+      status:
+        - success
+        - failure
