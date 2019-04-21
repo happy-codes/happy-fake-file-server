@@ -54,3 +54,6 @@ steps:
       status:
         - success
         - failure
+      ref:
+        include:
+          - refs/tags/*
