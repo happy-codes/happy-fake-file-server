@@ -1,7 +1,6 @@
 import express from 'express';
 import Throttle from 'throttle';
 import { Readable } from 'stream';
-import * as fs from 'fs';
 const app = express();
 const port = process.env.PORT || 3000;
 
