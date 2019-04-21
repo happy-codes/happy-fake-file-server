@@ -1,0 +1,35 @@
+{
+  "name": "happy-fake-file-server",
+  "version": "1.0.0",
+  "description": "A fake file download server which makes you happy.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "NODE_ENV=local nodemon --watch 'src/**/*.ts'  --exec 'ts-node' src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happy-codes/happy-fake-file-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/happy-codes/happy-fake-file-server/issues"
+  },
+  "homepage": "https://github.com/happy-codes/happy-fake-file-server#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "throttle": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.13.6",
+    "@types/throttle": "^1.0.0",
+    "nodemon": "^1.18.11",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.4"
+  }
+}
