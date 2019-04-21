@@ -34,6 +34,8 @@ or
 https://fake-file-server.harryyu.me/download?size=10&speed=1
 ```
 
+I use `node stream` to implement this tool, it is pretty easy, simple, and efficient, and you can read [the code](./src/index.ts) if you are interested.
+
 ## About Happy Codes
 
 Simple and useful codes can make people feel happy. But now, so many libraries or tools have a lot of codes or documents which make it complex and complicated.
