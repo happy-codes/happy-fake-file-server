@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:lts-alpine
 
 WORKDIR /usr/src/app
 
@@ -9,5 +9,5 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-EXPOSE 6644
+EXPOSE 80
 CMD [ "npm", "start" ]

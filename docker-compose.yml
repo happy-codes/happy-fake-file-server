@@ -5,4 +5,4 @@ services:
     image: yujiangshui/happy-fake-file-server
     restart: always
     ports:
-      - 6644:6644
+      - 80:80
